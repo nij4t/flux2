@@ -26,10 +26,10 @@ build: $(EMBEDDED_MANIFESTS_TARGET)
 install:
 	go install cmd/flux
 
+install-dev: $(EMBEDDED_MANIFESTS_TARGET)
+	CGO_ENABLED=0 go build -o /usr/local/bin ./cmd/flux
+
 .PHONY: docs
 docs:
 	rm -rf docs/cmd/*
 	mkdir -p ./docs/cmd && go run ./cmd/flux/ docgen
-
-install-dev:
-	CGO_ENABLED=0 go build -o /usr/local/bin ./cmd/flux
