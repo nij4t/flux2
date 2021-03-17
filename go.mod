@@ -2,6 +2,8 @@ module github.com/fluxcd/flux2
 
 go 1.16
 
+replace github.com/fluxcd/pkg/git => ../fluxcd-pkg/git
+
 require (
 	github.com/Masterminds/semver/v3 v3.1.0
 	github.com/cyphar/filepath-securejoin v0.2.2
